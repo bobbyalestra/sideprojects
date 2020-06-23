@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .button {
+            flex: display;
+            flex-wrap: nowrap;
+            background-color: blue;
+            color: snow;
+            width: 250px;
+            height: 25px;
+            box-shadow: black;
+        
+        }
+        
+                
+        #page-banner{
+            background: #eee ;
+            padding: 10px 0;
+        
+        }
+        
+        #page-banner h1, #page-banner p{
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        #page-banner input{
+            width: 90%;
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #444;
+        }
+        
+        .carbCorrection {
+            color: blue;
+            background-color:deepskyblue;
+            border-radius: 10px;
+            text-size-adjust: 16px;
+        }
+        
+        #book-list, #add-food, #tabbed-content{
+            margin: 30px;
+        }
+        
+        #food-list ul, #tabbed-content ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #food-list li{
+            padding: 20px;
+            border-left: 5px solid rgb(211, 34, 34);
+            margin: 20px 10px;
+        }
+        
+        #food-list li:hover{
+            border-color: slategrey;
+        }
+        
+                .delete {
+                    float: right;
+            background: lime;
+            padding: 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+                }
+                .name{
+                    text-size-adjust: 12px;
+                }
+                #number{
+                    color: red;
+                    background-color: silver;
+                }
+            #timeOfDay {
+                color:silver;
+                background-color: black;
+        
+            }
+        
+               
+            /* #totalCarbsInputs {
+                    background-color:  red;
+                    border: darkkhaki;
+                    font-size: 16px;
+                }  */
+                /* to do both functions  */
+                /* #totalCoverCorrectInput {
+                    border: rgb(27, 8, 199);
+                    background-color: darkblue;
+                    font-size: 16px;
+                    color: snow;
+                    border-radius: 10px;
+                } */
+        
+        
+                /* to cover the carbs button */
+                #totalCarbsInput{
+                    border: blue;
+                    background-color: lightseagreen;
+                    font-size: 16px;
+                    color: snow; 
+                    border-radius: 10px;
+                }
+        
+                #add-food{
+            width: 400px;
+            margin: 0 auto;
+            
+        }
+        #add-food button{
+            border: 1px solid red;
+            background: salmon;
+            padding: 10px 20px;
+            font-size: 16px;
+            display: inline-block;
+            margin: 0;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            width: 100px;
+            /* float: left; */
+            margin: 20px 0;
+            border-left: 0;
+            color: white;
+        }
+        
+        #add-food:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        #add-food input{
+            display: block;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            border-radius: 4px 0 0 4px;
+            box-sizing: border-box;
+            width: 300px;
+            float: left;
+            clear: both;
+        }
+        #add-food #hide{
+          width: 30px;
+          background-color: black ;
+          color:silver;
+        
+        }
+        
+        #add-food label{
+          line-height: 52px;
+        }
+        #add-carbs button {
+            background-color: limegreen;
+            color: snow;
+            size: 50px;
+        }
+        
+        .title {
+            position: center;
+        }
+        
+        
+        
+            </style>
+
+    <script>
+      
+
+
+            // around line 130 is where im having a problem i think
+
+
+let diabetesDisplay ={
+    display : [],
+
+    displayFoodItem: function (){
+        if (this.display.length === 0){
+            console.log('This is Empty')
+        }else{
+            console.log('Food Items : ')
+         }
+         
+         for(let i = 0; i <this.display.length; i++){
+             console.log(this.display[i].displayText);
+             if(this.display[i].completed === true){
+                 console.log(( ' (x) ' ),this.display[i].displayText);
+             }else{
+                 console.log( '(  )',this.display[i].displayText );
+             }
+         }
+    },
+
+    addCurrentBG:  function (displayText){
+        this.display.push(displayText)
+    //this.displayInfo();
+     },
+     deleteInfo: function (position){
+         this.display.splice(position);
+         this.displayInfo();
+     }
+    }
+    
+     
+    
+     let handlers = {
+
+        addCurrentBG: function(){
+            let addCurrentBGText = document.getElementById('addCurrentBGtTextInput')
+           // diabetesDisplay.addCurrentBG(addCurrentBGText).value;
+            addCurrentBGTextInput.value= " ";
+            view.displayInfo();
+        },
+        deleteInfo: function (position) {
+            diabetesDisplay.deleteInfo(position);
+            view.displayInfo();
+
+        }
+     }
+
+     let view = {
+         displayInfo: function(){
+             let foodUl = document.querySelector('ul');
+             foodUl.innerHTML= '';
+             for (let i = 0; i <diabetesDisplay.display.length; i++){
+                 let foodLi = document.createElement('li');
+                 let food = diabetesDisplay.display[i];
+                
+                 foodLi.id = i;
+                 foodLi.textContent = food.displayText
+                foodUl.appendChild(foodLi)
+                }
+         },
+
+     }
+
+
+     const diabetesFoodList = document.querySelector('#food-list ul');
+
+     diabetesFoodList.addEventListener('click', function(e){
+     if(e.target.className == 'delete'){
+         const li =e.target.parentElement;
+         diabetesFoodList.removeChild(li);
+     }
+     })
+
+
+
+     const addForm = document.forms['add-food']
+
+     addForm.addEventListener('submit', function(e){
+       e.preventDefault();
+        const value = addForm.querySelector('input[type="text"]').value;
+        const li = document.createElement('li');
+        const foodName = document.createElement('span');
+        foodName.textContent = value;
+        const deleteBtn = document.createElement('span');
+        deleteBtn.textContent = 'delete';
+        
+        foodName.classList.add('name');
+        deleteBtn.classList.add('delete');
+
+        li.appendChild(foodName);
+        li.appendChild(deleteBtn);
+        diabetesFoodList.appendChild(li);
+
+     })
+
+     const addForms = document.forms['totalCarbsInput']
+
+     addForms.addEventListener('submit', function(e){
+       e.preventDefault();
+        const value = addForms.querySelector('input[type="text"]').value;
+        const li = document.createElement('li');
+        const carbNumb = document.createElement('span');
+        carbNumb.textContent = value ;
+        const coverAmount = document.createElement('span');
+        
+
+        const deleteBtn = document.createElement('span');
+        deleteBtn.textContent = 'delete';
+
+        carbNumb.classList.add('name');
+        deleteBtn.classList.add('delete');
+
+
+
+        /////// added code
+       
+       
+        currentBG = document.getElementById('number');
+        let carbValue = parseInt(currentBG.options[currentBG.selectedIndex].value);     
+        let totalCarbs = document.getElementById("totalCarbsInputs").value
+    
+        carbCovering = (totalCarbs / carbValue );
+        coverAmount.textContent = carbCovering.value;
+       
+       
+        ///////////////// end of added code
+
+        li.appendChild(carbNumb);
+        li.appendChild(deleteBtn);
+        diabetesFoodList.appendChild(li);
+
+     })
+
+
+
+
+
+
+
+     const hideBox = document.querySelector('#hide');
+    
+     hideBox.addEventListener('change', function(e){
+         if(hideBox.checked){
+             diabetesFoodList.style.display= 'none'
+         }else{
+            diabetesFoodList.style.display= 'initial'
+         }
+     })
+     const searchBar = document.forms['search-foods'].querySelector('input');
+     searchBar.addEventListener('keyup', (e) => {
+       const term = e.target.value.toLowerCase();
+       const foods = diabetesFoodList.getElementsByTagName('li');
+       Array.from(foods).forEach((food) => {
+         const title = food.firstElementChild.textContent;
+         if(title.toLowerCase().indexOf(e.target.value) != -1){
+           food.style.display = 'block';
+      } else {
+           food.style.display = 'none';
+     }
+     });
+     });
+
+
+   ///////////// below is where im having trouble 
+   
+       
+function carbCover(){
+    let currentBG = document.getElementById('number');
+    let carbValue = parseInt(currentBG.options[currentBG.selectedIndex].value);     
+    let totalCarbs = document.getElementById("totalCarbsInputs").value
+
+    carbCovering = (totalCarbs / carbValue )
+   
+    return alert(carbCovering)
+}
+
+
+ function carbCorrection (){
+   
+   let totalCarbs = document.getElementById("totalCarbsInputs").value
+       let carbCorrecting=  ((totalCarbs- 110) /300) 
+      return alert(carbCorrecting)
+
+}
+
+
+  function totalCoverCorrect (carbCovering,carbCorrecting){
+
+    let currentBG = document.getElementById('number');
+    let carbValue = parseInt(currentBG.options[currentBG.selectedIndex].value);     
+    let totalCarbs = document.getElementById("totalCarbsInput").value
+
+    let totalCoverCorrecting = (carbCorrecting + carbCovering)
+    return alert(totalCoverCorrecting)
+  }
+
+
+//          trying to add another list to log the corretion and cover
+
+    const value = addForm.querySelector('input[type="text"]').value;
+        const li = document.createElement('li')
+        const displayNumber = document.createElement('span')
+        displayNumber.textContent = value;
+        li.appendChild(displayNumber);
+
+
+</script>
+
+            
+    </head>
+<body>
+
+
+
+    <div id="page-banner">
+        <h1 class="title">Diabetes App</h1>
+  <p>Aron Diabetes</p>
+  <form id="search-foods">
+    <input type="text" placeholder="Search Foods..." />
+  </form>
+    </div>
+
+    <!-- this is about where i think the problem is -->
+    <p></p>
+  
+    
+    <h2 class="title"></h2>
+    <div id="food-list">
+        
+    </div>
+  
+<p></p>
+</h1>
+
+    
+       <h1>
+           <!-- <img src='https://twitter.com/reactwith_r/photo' alt='Aron and I'> -->
+        <form id ="add-food">
+            <input type="text" placeholder="Add a Food Item..." />
+            <button>Add</button>
+
+            <input type="checkbox" id="hide" />
+            <label id="hide">Hide The Food</label>
+        </form>
+        
+        <form name='totalCarbsInput'>
+            <label id= 'timeOfDay'>Choose Meal Time </label>
+            <p></p>
+            <select id="number" onchange="timeOfDay">
+                <option id="breakfast" value = "35">Breakfast 35</option>
+                <option id = "breakfastSnack" value="35">Breakfast Snack 35</option>
+                <option id = "lunch" value = "90">Lunch Time 90</option>
+                <option id = "lunchSnack" value="60">Lunch Time Snack 60</option>
+                <option id = "dinner" value="60">Dinner 60</option>
+               
+            </select>
+        </h1> 
+<input id='totalCarbsInputs' type="text" placeholder="Add Total Carbs..." />
+<button class='button' id='totalCarbsInput' onclick="carbCover()">Click me to Cover</button>   
+<button class='button' id ='totalCarbsInput' onclick="carbCorrection()">Click me To Correct</button>
+<!-- <button id='totalCoverCorrectInput' onclick="carbCover()">Click me To Cover Correct</button>            -->
+<!-- <button>Submit</button> -->
+            </form>
+      
+
+
+
+            <h2 class="title">Food Items Eaten</h2>
+        <div id="food-list">
+           
+    
+            <ul>
+           
+            </ul>
+            </div>
+         
+        </div>
+     
+          
+
+        </h1>
+
+  
+
+
+
+</body>
+</html>
