@@ -47,21 +47,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const grid = document.querySelector('.grid');
+const result = document.querySelector('#result')
+let cardsChosen = []
+let cardsChoseId = []
+let cardsWon = []
 
  ///// create board
 
  function createBoard(){
-    for (let i = 0; i < cardsArray; i++ ){
+    for (let i = 0; i < cardsArray.length; i++ ){
        let card = document.createElement('img');
-        card.setAttribute('src', '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/pokemoncardback.jpeg');
+        card.setAttribute('src', '/images/pokemoncardback.jpeg');
         card.setAttribute('data-id', i);
-        //card.addEventListener('click', flipcard);
+        card.addEventListener('click', flipcard);
         grid.appendChild(card)
 
     }
  }
 
-createBoard()
+// check for matches 
+
+function checkForMatch (){
+   let cards = document.querySelectorAll('img');
+   const optionOneId = cardsChoseId[0];
+   const optionTwoId = cardsChosenId[1];
+   if (cardsChosen[0] === cardsChosen[1]){
+      alert(' You Found A Match')
+      cards[optionOneId].setAttribute('src', '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/background.png')
+      cards[optionTwoId].setAttribute('src', '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/background.png')
+      cardsWon.push(cardsChosen)
+   }else {
+      cards[optionOneId].setAttribute('src' , '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/background.png')
+      cards[optionTwoId].setAttribute('src' , '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/background.png')
+      cardsWon.push(cardsChosen)
+      alert('Try Again')
+   }
+   cardsChosen = []
+   cardsChoseId = [
+      resultDisplay
+   ]
+}
+
+//flip your card
+function flipCard(){
+   cardId = this.getAttribute('data-id')
+   cardsChosen.push(cardsArray[cardId].name)
+   cardsChoseId.push(cardId)
+   this.setAttribute('src', cardsArray[cardId].img);
+
+   if (cardsChosen.length === 2) {
+       setTimeout(heckForMatch, 500) ;
+
+   }
+}
+
+//
 
 
 
