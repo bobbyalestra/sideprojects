@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+
+  ////// console.log('dsfsdf')
    const cardsArray = [
    {
       name: 'deoxy' ,
@@ -44,10 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 ]
+//console.log('dsfsdf')
 
+cardsArray.sort(() => 0.5 - Math.random)
 
 const grid = document.querySelector('.grid');
-const result = document.querySelector('#result')
+const resultDisplay = document.querySelector('#result')
 let cardsChosen = []
 let cardsChoseId = []
 let cardsWon = []
@@ -64,7 +68,7 @@ let cardsWon = []
 
     }
  }
-
+ //console.log('dsfsdf')
 // check for matches 
 
 function checkForMatch (){
@@ -83,9 +87,13 @@ function checkForMatch (){
       alert('Try Again')
    }
    cardsChosen = []
-   cardsChoseId = [
-      resultDisplay
-   ]
+   cardsChoseId = []
+      resultDisplay.textContent = cardsWon.length;
+      if (cardsWon.length === cardsArray.length/2) {
+         resultDisplay.textContent = 'Congradulations! You Win'
+      }
+   
+   
 }
 
 //flip your card
@@ -102,8 +110,7 @@ function flipCard(){
 }
 
 //
-
-
+// console.log('dsfsdf')
 
 
 
