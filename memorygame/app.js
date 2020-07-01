@@ -5,22 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
    const cardsArray = [
    {
       name: 'deoxy' ,
-      img: '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/284-2845737_shiny-mega-deoxys-pokédex-shiny-mega-legendary-pokemon.png'
+      img: '/images/284-2845737_shiny-mega-deoxys-pokédex-shiny-mega-legendary-pokemon.png'
     
    },
    {
       name: 'groudon' ,
-      img: '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/groudoj.jpeg'
+      img: '/images/groudoj.jpeg'
     
    },
    {
       name: 'hooh' ,
-      img: '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/hoooh.jpeg'
+      img: '/images/hoooh.jpeg'
     
    },
    {
       name: 'kyogre' ,
-      img: '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/kyorgr.jpeg'
+      img: '/images/kyorgr.jpeg'
     
    },
    {
@@ -30,17 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
    },
    {
       name: 'rayquaza' ,
-      img: '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/rayquaza.jpeg'
+      img: '/images/rayquaza.jpeg'
     
    },
    {
       name: 'solgleo' ,
-      img: '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/unnamed.png'
+      img: '/images/unnamed.png'
     
    },
    {
       name: 'zaptos' ,
-      img: '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/zaptos.jpeg'
+      img: '/images/zaptos.jpeg'
     
    },
 
@@ -63,7 +63,7 @@ let cardsWon = []
        let card = document.createElement('img');
         card.setAttribute('src', '/images/pokemoncardback.jpeg');
         card.setAttribute('data-id', i);
-        card.addEventListener('click', flipcard);
+        card.addEventListener('click', flipCard);
         grid.appendChild(card)
 
     }
@@ -77,12 +77,16 @@ function checkForMatch (){
    const optionTwoId = cardsChosenId[1];
    if (cardsChosen[0] === cardsChosen[1]){
       alert(' You Found A Match')
-      cards[optionOneId].setAttribute('src', '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/background.png')
-      cards[optionTwoId].setAttribute('src', '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/background.png')
+      cards[optionOneId].setAttribute('src', '/images/background.png')
+      cards[optionTwoId].setAttribute('src', '/images/background.png')
       cardsWon.push(cardsChosen)
    }else {
-      cards[optionOneId].setAttribute('src' , '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/background.png')
-      cards[optionTwoId].setAttribute('src' , '/Users/bobby2/Documents/CareerDevs11e/sideprojects/memorygame/images/background.png')
+      cards[optionOneId].setAttribute('src' , '/images/background.png')
+      cards[optionTwoId].setAttribute('src' , '/images/background.png')
+     
+      cards[optionOneId].removeEventListener('click', flipCard)
+      cards[optionTwoId].removeEventListener('click', flipCard)
+      
       cardsWon.push(cardsChosen)
       alert('Try Again')
    }
@@ -104,7 +108,7 @@ function flipCard(){
    this.setAttribute('src', cardsArray[cardId].img);
 
    if (cardsChosen.length === 2) {
-       setTimeout(heckForMatch, 500) ;
+       setTimeout(checkForMatch, 500) ;
 
    }
 }
@@ -114,7 +118,7 @@ function flipCard(){
 
 
 
-
+createBoard();
 
 
 
