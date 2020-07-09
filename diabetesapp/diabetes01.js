@@ -35,9 +35,14 @@ document.addEventListener('DOMContentLoaded',()  => {
         deleteInfo: function (position) {
             this.foodDisplay.splice(position);
             this.displayInfo();
-        }
+        },
             
+        handlers: function () {
+            addCurrentBg: function () {
+                let currentBgText = document.getElementById
+            }
 
+        }
         
 
     }
