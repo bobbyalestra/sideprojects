@@ -1,0 +1,9 @@
+
+function factorialize(num) {
+    for ( product = 1; num > 0; num--) {
+      product *= num;
+    }
+    return product;
+  }
+  
+  factorialize(5);
