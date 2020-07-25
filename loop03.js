@@ -20,14 +20,14 @@
 // out put current plus previous
 
 
-// let newNum;
-// let current = 1
-// let previous ;
-// for (let i = 0; i < 100; i++ ){
+let newNum;
+let current = 1
+let previous ;
+for (let i = 0; i < 100; i++ ){
   
-//     newNum = current + previous
-//   console.log(newNum)
-// }
+    newNum = current + previous
+  console.log(newNum)
+}
 
 
 

@@ -23,32 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // JS Data
     // make a Hotel Object
-    // make an array of allRooms
-    let hotelJsData ={
-       allRooms : [ [101, 102, 103, 104], [201, 202, 203, 204], [301, 302, 303, 304], [401, 402, 403, 404] ],
-        selectedRooms : [],
-        currentRoomBooked: [],
-        currentFloorBooked: [],
+    // // make an array of allRooms
+    // let hotelJsData ={
+    //    allRooms : [ [101, 102, 103, 104], [201, 202, 203, 204], [301, 302, 303, 304], [401, 402, 403, 404] ],
+    //     selectedRooms : [],
+    //     currentRoomBooked: [],
+    //     currentFloorBooked: [],
 
 
 
-        bookRooms: function () {
+    //     bookRooms: function () {
             
 
-            this.allRooms[this.currentFloorBooked].splice(this.allRooms[this.currentFloorBooked].indexOf(this.currentRoomBooked), 1);
-            this.bookedRooms
-            
-          }
+    //         this.selectedRooms.push()
+    //       }
           
-          }
+    //       }
           
-            linesOfHtml = "<select>"  
-          for (i = 0; i < allRooms.lenth; i++)
-          linesOfHtml = linesOfHtml + `<option value = '${allRooms[i]}'>${allRooms[i]} </option>`
+    //         linesOfHtml = "<select>"  
+    //       for (i = 0; i < allRooms.lenth; i++)
+    //       linesOfHtml = linesOfHtml + `<option value = '${allRooms[i]}'>${allRooms[i]} </option>`
           
-          linesOfHtml = linesOfHtml + "</select>"
+    //       linesOfHtml = linesOfHtml + "</select>"
           
-          document.getElementById('dropDownList').innerHTML = linesOfHtml;
+    //       document.getElementById('dropDownList').innerHTML = linesOfHtml;
 
 
 
@@ -91,6 +89,15 @@ document.addEventListener('DOMContentLoaded', () => {
     optionDrop.innerHTML = allRooms[i][j]
     dropDown.appendChild(optionDrop)
         }
+    }
+
+    function selectRoom (){
+        selectRooms.push(allRooms[i][j])
+        let optionDrop2 = document.createElement('option');
+    optionDrop2.id = 'options2';
+    optionDrop2.value = selectedRooms[];
+    optionDrop2.innerHTML = 
+    dropDown.appendChild(optionDrop)
     }
 
 
