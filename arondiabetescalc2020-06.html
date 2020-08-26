@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Diabetes Insulin Calculator</title>
 
     <style>
-
+ 
         .button {
             flex: display;
             flex-wrap: nowrap;
@@ -17,7 +17,7 @@
             box-shadow: black;
         
         }
-        
+    /* the page banner */
                 
         #page-banner{
             background: #eee ;
@@ -81,12 +81,12 @@
                     text-size-adjust: 12px;
                 }
                 #number{
-                    color: red;
-                    background-color: silver;
+                    color: blue;
+                    background-color: red;
                 }
             #timeOfDay {
-                color:silver;
-                background-color: black;
+                color:blue;
+                background-color: red;
         
             }
         
@@ -109,9 +109,9 @@
                 /* to cover the carbs button */
                 #totalCarbsInput{
                     border: blue;
-                    background-color: lightseagreen;
+                    background-color: red;
                     font-size: 16px;
-                    color: snow; 
+                    color: blue; 
                     border-radius: 10px;
                 }
         
@@ -156,8 +156,8 @@
         }
         #add-food #hide{
           width: 30px;
-          background-color: black ;
-          color:silver;
+          background-color: red ;
+          color : blue;
         
         }
         
@@ -217,7 +217,7 @@ let diabetesDisplay ={
 
         addCurrentBG: function(){
             let addCurrentBGText = document.getElementById('addCurrentBGTextInput')
-           // diabetesDisplay.addCurrentBG(addCurrentBGText).value;
+         diabetesDisplay.addCurrentBG(addCurrentBGText).value;
             addCurrentBGTextInput.value= " ";
             view.displayInfo();
         },
@@ -361,7 +361,7 @@ function carbCover(){
  function carbCorrection (){
    
    let totalCarbs = document.getElementById("totalCarbsInputs").value
-       let carbCorrecting=  ((totalCarbs- 110) /300) 
+       let carbCorrecting=  ((totalCarbs - 120) /300) 
       return alert(carbCorrecting)
 
 }
@@ -396,8 +396,8 @@ function carbCover(){
 
 
     <div id="page-banner">
-        <h1 class="title">Diabetes App</h1>
-  <p>Aron Diabetes</p>
+        <h1 class="title">D.I.C</h1>
+  <p>Diabetes Insulin Calculator</p>
   <form id="search-foods">
     <input type="text" placeholder="Search Foods..." />
   </form>
@@ -430,11 +430,11 @@ function carbCover(){
             <label id= 'timeOfDay'>Choose Meal Time </label>
             <p></p>
             <select id="number" onchange="timeOfDay">
-                <option id="breakfast" value = "60">Breakfast 60</option>
-                <option id = "breakfastSnack" value="60">Breakfast Snack 60</option>
+                <option id="breakfast" value = "50">Breakfast 50</option>
+                <option id = "breakfastSnack" value="120">Breakfast Snack 120</option>
                 <option id = "lunch" value = "120">Lunch Time 120</option>
-                <option id = "lunchSnack" value="60">Lunch Time Snack 60</option>
-                <option id = "dinner" value="60">Dinner 60</option>
+                <option id = "lunchSnack" value="120">Lunch Time Snack 120</option>
+                <option id = "dinner" value="50">Dinner 50</option>
                
             </select>
         </h1> 
@@ -444,7 +444,7 @@ function carbCover(){
 <!-- <button id='totalCoverCorrectInput' onclick="carbCover()">Click me To Cover Correct</button>            -->
 <!-- <button>Submit</button> -->
             </form>
-      
+     <!-- cuurent version -->
 
 
 
@@ -463,7 +463,29 @@ function carbCover(){
 
         </h1>
 
-  
+  <div id = 'customCover'>
+    <script>
+         let button4 = document.createElement('button');
+    button4.id = 'fourthButton';
+   button4.style.color = 'red'
+    
+    button4.innerText = "Custom Ratio";
+    div6.appendChild(button4);
+    button4.addEventListener('click', () => {
+
+    let customRatio = document.getElementById('fourthInputBar').value;
+    let carbAmount = document.getElementById('secondInputBar').value;
+    let customCover = (carbAmount /customRatio)
+    let returnCustomCover = "<li>" + customCover +  " "  + " " + 'UNIT' + " "  +"</li>"
+    myStorage1 = localStorage.setItem('Custom Cover Insulin', customCover);
+    myStorageSession = sessionStorage.setItem('Custom Cover Insulin', customCover)
+    foodUlElement.style.color = 'red'
+    document.getElementById('covercorrectLi').innerHTML += returnCustomCover + 'custom Cover Amount'
+        button4.style.color = 'blue'
+});
+    </script>
+
+  </div>
 
 
 
