@@ -156,10 +156,28 @@ let bColor = "background-color"
     dropDown2.style.color = 'red';
     div8.appendChild(dropDown2);
 
+
+    let option0Drop2 = document.createElement('option');
+    option0Drop2.id = 'drop2opt1';
+    option0Drop2.innerHTML = ' ';
+    dropDown2.appendChild(option0Drop2);
+
+    let option1DropQCup =  document.createElement('option');
+    option1DropQCup.id = 'drop2optQCup';
+    option1DropQCup.innerHTML = '1/4 Cup';
+    dropDown2.appendChild(option1DropQCup);
+
+    let option1DropCup =  document.createElement('option');
+    option1DropCup.id = 'drop2optHCup';
+    option1DropCup.innerHTML = '1/2 Cup';
+    dropDown2.appendChild(option1DropCup);
+
     let option1Drop2 = document.createElement('option');
-    option1Drop2.id = 'drop2opt1';
+    option1Drop2.id = 'drop2optC';
     option1Drop2.innerHTML = 'Cup';
     dropDown2.appendChild(option1Drop2);
+
+    
 
     let option2Drop2 = document.createElement('option');
     option2Drop2.id = 'drop2opt2';
@@ -174,7 +192,7 @@ let bColor = "background-color"
 
     let option4Drop2 = document.createElement('option');
     option4Drop2.id = 'drop2opt4';
-    option4Drop2.innerHTML = 'Slice';
+    option4Drop2.innerHTML = 'Teaspoon';
     dropDown2.appendChild(option4Drop2);
 
 
@@ -182,6 +200,16 @@ let bColor = "background-color"
     option5Drop2.id = 'drop2opt5';
     option5Drop2.innerHTML = 'Fluid Oz';
     dropDown2.appendChild(option5Drop2);
+
+    let option6Drop2 = document.createElement('option');
+    option6Drop2.id = 'drop2opt6';
+    option6Drop2.innerHTML = 'Oz';
+    dropDown2.appendChild(option6Drop2);
+
+    let option7Drop2 = document.createElement('option');
+    option7Drop2.id = 'drop2opt7';
+    option7Drop2.innerHTML = 'Slice';
+    dropDown2.appendChild(option7Drop2);
 
       // input bar for covering
       let inputBar2 = document.createElement('input');
@@ -400,8 +428,6 @@ let bColor = "background-color"
     let currentBGCustom = document.getElementById('thirdInputBar').value;
 
     let customCorrect = ((currentBGCustom - customTarget)  / customCorrectionFactor);
-    
-    // let addingtoPositive = customCorrect + customCorrect + customCorrect
     let returnCustomCorrect = "<li>" + customCorrect +  " "  + " " + 'UNIT' + " "  +"</li>"
     myStorage1 = localStorage.setItem('Custom Target Correct', customCorrect);
     myStorageSession = sessionStorage.setItem('Custom Correct', customCorrect);
@@ -450,28 +476,15 @@ let bColor = "background-color"
         let dropselect = document.getElementById('secondDropDown');
         let addDrop = dropselect.options[dropselect.selectedIndex].value
         let foodlist = document.getElementById('foodLogUnorderList');
-        let displayFoodLog =  "<li>" + ' ' + '' + amountInput + '' +  " " + addDrop + "" +  " " + foodinput + '' + " is " + carbsAmount + " " + "" + "" + "carbs"  + '</li>';
+        let displayFoodLog =  "<li>" + ' ' + '' + amountInput + '' +  " " + addDrop + " " + "of " +  " " + foodinput + '' + " is " + carbsAmount + " " + "" + "" + "grams"+ " " +  "of" + " " + " " + "carbs"  + '</li>';
         document.getElementById('foodLogList').innerHTML += displayFoodLog;
 
 
 });
-    // let button9 = document.createElement('button');
-    // button9.id = 'ninethbutton';
-    // button9.style.color = 'green';
-    // button9.innerText = 'Cover Total'
-    // div8.appendChild(button9);
-    // button9.addEventListener('click', () => {
-        
-    //     let carbCover = document.getElementById('amountOfCarbs').value;
-    //     let totalCarbs =  carbCover += carbCover;
 
-    // })
 
 });
 
     </script>
-
-
-
 </body>
 </html>
