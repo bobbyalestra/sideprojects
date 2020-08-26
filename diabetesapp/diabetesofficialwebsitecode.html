@@ -222,6 +222,7 @@ let bColor = "background-color"
     inputBar7.placeholder = 'Enter Food Items'
     div9.appendChild(inputBar7);
 
+
     let carbListAmount = document.createElement('input');
     carbListAmount.id = 'amountOfCarbs';
     carbListAmount.placeholder = 'Enter Carb Amount';
@@ -257,6 +258,16 @@ let bColor = "background-color"
     let foodLogLi = document.createElement('li');
     foodLogLi.id = 'foodLogList';
     foodLogUl.appendChild(foodLogLi);
+
+    let totalLogUl = document.createElement('ul');
+    totalLogUl.id = 'totalLog';
+    totalLogUl.style.color = 'indigo';
+    div10.appendChild(totalLogUl);
+
+    let totalLogLi = document.createElement('li');
+    totalLogLi.id = 'totalLogsList';
+    totalLogUl.appendChild(totalLogLi);
+
 
     // submit button for carb cover //
     let button1 = document.createElement('button');
@@ -439,19 +450,24 @@ let bColor = "background-color"
         let dropselect = document.getElementById('secondDropDown');
         let addDrop = dropselect.options[dropselect.selectedIndex].value
         let foodlist = document.getElementById('foodLogUnorderList');
-        let displayFoodLog =  "<li>" + ' ' + '' + amountInput + '' +  " " + addDrop + "" +  " " + foodinput + '' + " is " + carbsAmount + "" + "carbs"  + '</li>';
+        let displayFoodLog =  "<li>" + ' ' + '' + amountInput + '' +  " " + addDrop + "" +  " " + foodinput + '' + " is " + carbsAmount + " " + "" + "" + "carbs"  + '</li>';
         document.getElementById('foodLogList').innerHTML += displayFoodLog;
-
-  
-
-
-
 
 
 });
+    // let button9 = document.createElement('button');
+    // button9.id = 'ninethbutton';
+    // button9.style.color = 'green';
+    // button9.innerText = 'Cover Total'
+    // div8.appendChild(button9);
+    // button9.addEventListener('click', () => {
+        
+    //     let carbCover = document.getElementById('amountOfCarbs').value;
+    //     let totalCarbs =  carbCover += carbCover;
 
+    // })
 
-})
+});
 
     </script>
 
