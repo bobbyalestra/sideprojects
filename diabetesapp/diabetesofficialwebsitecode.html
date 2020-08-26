@@ -108,6 +108,13 @@ let bColor = "background-color"
  p3.innerText = 'TOP BUTTONS ARE FOR ARON.......ALL FIELDS MUST BE ENTERED TO USE THE CUSTOM BUTTONS.';
     div6.appendChild(p3);
     // drop down and the option values
+
+
+
+
+
+
+
     let dropDown1 = document.createElement('select');
     dropDown1.id = 'firstDropDown';
     dropDown1.style.color = 'blue'
@@ -144,6 +151,38 @@ let bColor = "background-color"
     dropDown1.appendChild(optionDropDown4);
 
 
+    let dropDown2 = document.createElement('select');
+    dropDown2.id = 'secondDropDown';
+    dropDown2.style.color = 'red';
+    div8.appendChild(dropDown2);
+
+    let option1Drop2 = document.createElement('option');
+    option1Drop2.id = 'drop2opt1';
+    option1Drop2.innerHTML = 'Cup';
+    dropDown2.appendChild(option1Drop2);
+
+    let option2Drop2 = document.createElement('option');
+    option2Drop2.id = 'drop2opt2';
+    option2Drop2.innerHTML = 'Grams';
+    dropDown2.appendChild(option2Drop2);
+
+    let option3Drop2 = document.createElement('option');
+    option3Drop2.id = 'drop2opt3';
+    option3Drop2.innerHTML = 'TableSpoon';
+    dropDown2.appendChild(option3Drop2);
+
+
+    let option4Drop2 = document.createElement('option');
+    option4Drop2.id = 'drop2opt4';
+    option4Drop2.innerHTML = 'Slice';
+    dropDown2.appendChild(option4Drop2);
+
+
+    let option5Drop2 = document.createElement('option');
+    option5Drop2.id = 'drop2opt5';
+    option5Drop2.innerHTML = 'Fluid Oz';
+    dropDown2.appendChild(option5Drop2);
+
       // input bar for covering
       let inputBar2 = document.createElement('input');
     inputBar2.id = 'secondInputBar';
@@ -172,10 +211,22 @@ let bColor = "background-color"
     inputBar6.placeholder = 'Enter Correction Factor';
     div7.appendChild(inputBar6);
 
+    let foodListNumAmount = document.createElement('input');
+    foodListNumAmount.id = 'foodAmount';
+    foodListNumAmount.placeholder = 'How much of Food'
+    div9.appendChild(foodListNumAmount)
+
+
     let inputBar7 = document.createElement('input');
     inputBar7.id = 'seventhInputBar';
     inputBar7.placeholder = 'Enter Food Items'
     div9.appendChild(inputBar7);
+
+    let carbListAmount = document.createElement('input');
+    carbListAmount.id = 'amountOfCarbs';
+    carbListAmount.placeholder = 'Enter Carb Amount';
+    div9.appendChild(carbListAmount);
+
 
     let coverCorrectList = document.createElement('ul');
     coverCorrectList.id = 'ul2';
@@ -382,9 +433,13 @@ let bColor = "background-color"
     button8.innerText = 'ADD FOOD'
     document.getElementById('eighthDiv').appendChild(button8);
     button8.addEventListener('click', ()=> {
+        let amountInput = document.getElementById('foodAmount').value;
         let foodinput = document.getElementById('seventhInputBar').value;
+        let carbsAmount = document.getElementById('amountOfCarbs').value;
+        let dropselect = document.getElementById('secondDropDown');
+        let addDrop = dropselect.options[dropselect.selectedIndex].value
         let foodlist = document.getElementById('foodLogUnorderList');
-        let displayFoodLog =  "<li>" + foodinput + '' + '</li>';
+        let displayFoodLog =  "<li>" + ' ' + '' + amountInput + '' +  " " + addDrop + "" +  " " + foodinput + '' + " is " + carbsAmount + "" + "carbs"  + '</li>';
         document.getElementById('foodLogList').innerHTML += displayFoodLog;
 
   
