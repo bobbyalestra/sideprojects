@@ -481,22 +481,39 @@ let bColor = "background-color"
 
 
 });
-    //     let button9 = document.createElement('button');
-//     button9.id = 'ninethbutton';
-//     button9.style.color = 'green';
-//     button9.innerText = 'Cover Total'
-//     div8.appendChild(button9);
-//     button9.addEventListener('click', () => {
+        let button9 = document.createElement('button');
+    button9.id = 'ninethbutton';
+    button9.style.color = 'green';
+    button9.innerText = 'Cover Total'
+    div8.appendChild(button9);
+    button9.addEventListener('click', () => {
         
-//         let carbCover = document.getElementById('amountOfCarbs').value;
-//         let totalCarbs = 0;
-//          carbnum = totalCarbs + carbCover;
-//          let newTotal = totalCarbs + carbnum
-//         let finalTotal = document.getElementById('totalLog');
-//         let displayTotal = "<li>" + newTotal + "</li>"
-//         document.getElementById('totalLogsList').innerHTML =+ displayTotal
+        let totalss = 0
+        let currentt = document.getElementById('amountOfCarbs').value 
+        let parsedTots =  parseInt(totalss)
+        let parseCurent = parseInt(currentt)
+        let finalCarbTotal = parsedTots + parseCurent ;
+        let finalParse = 
  
-// });
+        let arr = [parsedTots];
+        
+        for (let i = 1; i < arr.length; i++ ){
+        arr.push(arr[i] + parseCurent)
+        }
+        console.log(arr)
+
+        let finalTotal = document.getElementById('totalLog');
+        let displayTotal = "<li>" + arr + "</li>"
+        document.getElementById('totalLogsList').innerHTML =+ displayTotal
+        console.log(arr)
+       
+        
+
+
+        
+    
+
+});
 
 });
 
