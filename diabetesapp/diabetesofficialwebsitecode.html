@@ -13,7 +13,7 @@
 
 
 document.addEventListener('DOMContentLoaded',()  => {
-let bColor = "background-color"
+
     let totalInsulinLocalStorageArray =  []
     // top make local storage yoyu must add a JON.Stringify the object and the push it to an array that the local storage callsback
     
@@ -463,6 +463,8 @@ let bColor = "background-color"
 
 
 })
+const totalsNew = [];
+
     let button8 = document.createElement('button');
     button8.id = 'eighthButton';
  
@@ -476,43 +478,54 @@ let bColor = "background-color"
         let dropselect = document.getElementById('secondDropDown');
         let addDrop = dropselect.options[dropselect.selectedIndex].value
         let foodlist = document.getElementById('foodLogUnorderList');
+        totalsNew.push(carbsAmount)
         let displayFoodLog =  "<li>" + ' ' + '' + amountInput + '' +  " " + addDrop + " " + "of " +  " " + foodinput + '' + " is " + carbsAmount + " " + "" + "" + "grams"+ " " +  "of" + " " + " " + "carbs"  + '</li>';
         document.getElementById('foodLogList').innerHTML += displayFoodLog;
 
 
 });
+
+
         let button9 = document.createElement('button');
-    button9.id = 'ninethbutton';
-    button9.style.color = 'green';
-    button9.innerText = 'Cover Total'
-    div8.appendChild(button9);
-    button9.addEventListener('click', () => {
+        button9.id = 'ninethbutton';
+        button9.style.color = 'green';
+        button9.innerText = 'Cover Total'
+        div8.appendChild(button9);
+        button9.addEventListener('click', () => {
         
-        let totalss = 0
-        let currentt = document.getElementById('amountOfCarbs').value 
-        let parsedTots =  parseInt(totalss)
-        let parseCurent = parseInt(currentt)
-        let finalCarbTotal = parsedTots + parseCurent ;
-       
- 
-        let arr = [parsedTots];
-        
-        for (let i = 1; i < arr.length; i++ ){
-        arr.push(arr[i] + parseCurent)
-        }
-        console.log(arr)
-
-        let finalTotal = document.getElementById('totalLog');
-        let displayTotal = "<li>" + arr + "</li>"
-        document.getElementById('totalLogsList').innerHTML =+ displayTotal
-        console.log(arr)
-       
-        
+            let carbCover = document.getElementById('amountOfCarbs').value;
+            let totalCarbs = 0 ;
+            //let newTotal = parseInt(totalCarbs) + parseInt(carbCover);
+            let carbsArray = [ ];
 
 
-        
+
+          totalsNew.push(carbCover);
+            
+             for (let i = 0; i < totalsNew.length ; i++){
+                
+              totalCarbs = 0 + parseInt((totalsNew[i]))
+              let finallllly = totalCarbs + carbCover
+              carbsArray.push(totalCarbs);
+            
     
+            //////
+               //console.log(typeof(newTotal));        
+            //console.log(newTotal);   
+           // console.log(pushTotal);
+            console.log(totalCarbs, "total carbs");
+           console.log(typeof(totalCarbs), "type of totalcarbs");
+            console.log(totalsNew, "total new");
+           // console.log(finalTot, " Final Tot");
+            console.log(carbsArray, "Carbs Array")
+            console.log()
 
+            let finaltotal = document.getElementById('totalLog');
+        let displayFoodLog =  "<li>" +  " "+ carbsArray + " " + "carbs"  + '</li>';
+        document.getElementById('totalLogsList').innerHTML += displayFoodLog;
+
+             }
+        
 });
 
 });
@@ -520,3 +533,5 @@ let bColor = "background-color"
     </script>
 </body>
 </html>
+
+
