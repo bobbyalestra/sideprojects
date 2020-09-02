@@ -498,13 +498,13 @@ const totalsNew = [];
             var totalCarbs = 0 ;
             //let newTotal = parseInt(totalCarbs) + parseInt(carbCover);
             let carbsArray = [ ];
-
+            
 
              
                   
                 for (let i = 0; i < totalsNew.length ; i++){
                 
-                totalCarbs += parseInt((totalsNew[i])) 
+                totalCarbs = totalCarbs + parseInt((totalsNew[i])) 
                
 
         //   totalsNew.push(carbCover);
@@ -522,7 +522,7 @@ const totalsNew = [];
             console.log()
 
             let finaltotal = document.getElementById('totalLog');
-        let displayFoodLog =  "<li>" +  " "+ totalCarbs + " " + "carbs"  + '</li>';
+        let displayFoodLog =  "<li>" +  " "+ totalCarbs + " " + "total Amount of carbs"  + '</li>';
         document.getElementById('totalLogsList').innerHTML += displayFoodLog;
 
                 }   
