@@ -489,25 +489,26 @@ const totalsNew = [];
         let button9 = document.createElement('button');
         button9.id = 'ninethbutton';
         button9.style.color = 'green';
-        button9.innerText = 'Cover Total'
+        button9.innerText = 'Find Total'
         div8.appendChild(button9);
-        button9.addEventListener('click', () => {
+        button9.addEventListener('click',  (input) => {
         
-            let carbCover = document.getElementById('amountOfCarbs').value;
-            let totalCarbs = 0 ;
+
+             input = document.getElementById('amountOfCarbs').value;
+            var totalCarbs = 0 ;
             //let newTotal = parseInt(totalCarbs) + parseInt(carbCover);
             let carbsArray = [ ];
 
 
-
-          totalsNew.push(carbCover);
-            
-             for (let i = 0; i < totalsNew.length ; i++){
+             
+                  
+                for (let i = 0; i < totalsNew.length ; i++){
                 
-              totalCarbs = 0 + parseInt((totalsNew[i]))
-              let finallllly = totalCarbs + carbCover
-              carbsArray.push(totalCarbs);
-            
+                totalCarbs += parseInt((totalsNew[i])) 
+               
+
+        //   totalsNew.push(carbCover);
+
     
             //////
                //console.log(typeof(newTotal));        
@@ -521,10 +522,10 @@ const totalsNew = [];
             console.log()
 
             let finaltotal = document.getElementById('totalLog');
-        let displayFoodLog =  "<li>" +  " "+ carbsArray + " " + "carbs"  + '</li>';
+        let displayFoodLog =  "<li>" +  " "+ totalCarbs + " " + "carbs"  + '</li>';
         document.getElementById('totalLogsList').innerHTML += displayFoodLog;
 
-             }
+                }   
         
 });
 
