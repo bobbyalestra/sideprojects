@@ -498,14 +498,17 @@ const totalsNew = [];
             var totalCarbs = 0 ;
             //let newTotal = parseInt(totalCarbs) + parseInt(carbCover);
             let carbsArray = [ ];
-
+            
 
              
                   
                 for (let i = 0; i < totalsNew.length ; i++){
+                 
                 
-          totalCarbs += parseInt((totalsNew[i])) 
-               
+          carbsArray.push(totalCarbs += parseInt(totalsNew[i])) 
+          
+          
+         
 
         //   totalsNew.push(carbCover);
 
@@ -524,9 +527,9 @@ const totalsNew = [];
             let finaltotal = document.getElementById('totalLog');
         let displayFoodLog =  "<li>" +  " "+ totalCarbs + " " + "total Amount of carbs"  + '</li>';
         document.getElementById('totalLogsList').innerHTML += displayFoodLog;
-
+      
                 }   
-        
+                totalCarbs = 0
 });
 
 });
