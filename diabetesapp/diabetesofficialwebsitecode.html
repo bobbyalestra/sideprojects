@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded',()  => {
     let customTarget = document.getElementById('fifthInputBar').value;
     let currentBGCustom = document.getElementById('thirdInputBar').value;
 
-    let customCorrect = ((currentBGCustom - customTarget )  / 300);
+    let customCorrect = ((currentBGCustom - customTarget )  / 250);
     let returnCustomCorrect = "<li>" + customCorrect +  " "  + " " + 'UNIT' + " "+"</li>"
     myStorage1 = localStorage.setItem('Custom Target Correct', customCorrect);
     myStorageSession = sessionStorage.setItem('Custom Correct', customCorrect);
