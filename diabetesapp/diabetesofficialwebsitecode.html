@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <Style>
 
+        secondP1Tag {
+                background-color: blue;
+
+            
+    
+    
+        }
+        </Style>
 </head>
 
 <body>
    
+
+  
+
+
     <script>
 
 
@@ -343,7 +356,7 @@ document.addEventListener('DOMContentLoaded',()  => {
     button2.addEventListener('click', () => {
         button2.style.color = 'red'
         let currentBG = document.getElementById('thirdInputBar').value;
-        let correctionValue = ((currentBG - 120) / 300);
+        let correctionValue = ((currentBG - 100) / 250);
 
         let returnCorrect = "<li>" + correctionValue +  " "  + " " + 'UNIT' + " " +"</li>"
         myStorage1 = localStorage.setItem('carbCorrecting', correctionValue);
@@ -360,7 +373,7 @@ document.addEventListener('DOMContentLoaded',()  => {
     button3.addEventListener('click', () => {
         button3.style.color = 'red'
         let currentBG = document.getElementById('thirdInputBar').value;
-        let correctionValue = ((currentBG - 120) / 300);
+        let correctionValue = ((currentBG - 100) / 250);
         let currentBGTotal = document.getElementById('firstDropDown');
         let carbValue = parseInt(currentBGTotal.options[currentBGTotal.selectedIndex].value);     
         let totalCarbs = document.getElementById("secondInputBar").value
