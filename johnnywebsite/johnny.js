@@ -1,6 +1,6 @@
 
 
-document.addEventListener("DOMContent Loaded",() => {
+document.addEventListener("DOMContentLoaded",() => {
 
     let h1Tag = document.createElement('h1');
     h1Tag.id = "aboutMeH1";
