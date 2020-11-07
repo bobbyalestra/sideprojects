@@ -12,7 +12,7 @@ function App() {
     <Navbar />
     <Switch>
       <Route path='/' exact component =
-        {HTMLFormElement}
+        {Home}
       />
     </Switch>
     </Router>
