@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded',()  => {
     button2.addEventListener('click', () => {
         button2.style.color = 'red'
         let currentBG = document.getElementById('thirdInputBar').value;
-        let correctionValue = ((currentBG - 100) / 250);
+        let correctionValue = ((currentBG - 100) / 200);
 
         let returnCorrect = "<li>" + correctionValue +  " "  + " " + 'UNIT' + " " +"</li>"
         myStorage1 = localStorage.setItem('carbCorrecting', correctionValue);
