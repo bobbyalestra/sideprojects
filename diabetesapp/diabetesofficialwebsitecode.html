@@ -403,11 +403,8 @@ document.addEventListener('DOMContentLoaded',()  => {
     myStorageSession = sessionStorage.setItem('Custom Correct', customCorrect);
     document.getElementById('covercorrectLi').innerHTML += returnCustomCorrect + 'custom Correction Amount';
 
-
-
     })
-
-
+// refactor
     let button7 = document.createElement('button');
     button7.id = 'seventhButton';
     button7.style.color = 'red'  
@@ -430,8 +427,6 @@ document.addEventListener('DOMContentLoaded',()  => {
     myStorage1 = localStorage.setItem('Final Custom Insulin', finalCustomInulin);
     myStorageSession = sessionStorage.setItem('Final Custom Insulin', finalCustomInulin);
     document.getElementById('covercorrectLi').innerHTML += returnFinalCustomCorrect  + 'custom Total Amount';
-
-
 })
 const totalsNew = [];
 
