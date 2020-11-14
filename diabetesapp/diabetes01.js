@@ -14,11 +14,7 @@ let bColor = "background-color"
     h1.innerHTML = 'Diabetic Insulin Calculator';
     document.body.appendChild(h1);
 
-    // let inputBar3 = document.createElement('input');
-    // inputBar3.id = 'foodSearch';
-    // inputBar3.placeholder = 'Enter Item You Are Looking For';
-    // document.body.appendChild(inputBar3)
-    
+   
 
     let div1 =document.createElement('div');
     div1.id = 'firstDiv';
