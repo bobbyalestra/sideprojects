@@ -40,10 +40,14 @@ document.addEventListener('DOMContentLoaded',()  => {
     document.body.appendChild(div4);
 
     let h2 = document.createElement('h2');
-    h2.innerText = " Carb Ratio"
+    h2.innerText = " Carb Ratio & Bolas Rates"
     h2.id = 'h2Tag';
     //div1.appendChild(p4)
     div4.appendChild(h2)
+
+    let h4Tag2 = document.createElement('h4');
+    h4Tag2.innerText = 'Basal Release Rate of .1 units per hour from 12am - 9pm. Then increases to .15 until 12am';
+    div4.appendChild(h4Tag2);
  
 
      let div2 = document.createElement('div');
@@ -118,22 +122,22 @@ document.addEventListener('DOMContentLoaded',()  => {
     let optionDropDown3 = document.createElement('option');
     optionDropDown3.id = 'thirdOption';
     optionDropDown3.style.color = 'blue'
-    optionDropDown3.innerHTML = '6am - 8:30am    (30)';
-    optionDropDown3.value = 30
+    optionDropDown3.innerHTML = '6am - 8:30am    (45)';
+    optionDropDown3.value = 45;
     dropDown1.appendChild(optionDropDown3);
 
     let optionDropDown2 = document.createElement('option');
     optionDropDown2.id = 'secondOption';
     optionDropDown2.style.color = 'red'
-    optionDropDown2.innerHTML = '8:30am - 4:30pm    (54)';
-    optionDropDown2.value = 54
+    optionDropDown2.innerHTML = '8:30am - 4:30pm    (70)';
+    optionDropDown2.value = 70
     dropDown1.appendChild(optionDropDown2);
 
     let optionDropDown4 = document.createElement('option');
     optionDropDown4.id = 'fourthOption';
   
-    optionDropDown4.innerHTML = '4:30pm - 12am    (36)';
-    optionDropDown4.value = 50;
+    optionDropDown4.innerHTML = '4:30pm - 12am    (45)';
+    optionDropDown4.value = 45;
     optionDropDown4.style.color = 'blue'
     dropDown1.appendChild(optionDropDown4);
 
