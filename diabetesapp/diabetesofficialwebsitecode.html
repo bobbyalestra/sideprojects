@@ -103,6 +103,8 @@ document.addEventListener('DOMContentLoaded',()  => {
     div7.appendChild(p2);
     div8.appendChild(p2);
     div9.appendChild(p2);
+    nutritionDiv.appendChild(p2);
+
 
     let p3 = document.createElement('p1');
     p3.id = 'p1Tag';
@@ -199,6 +201,9 @@ document.addEventListener('DOMContentLoaded',()  => {
     option7Drop2.innerHTML = 'Slice';
     dropDown2.appendChild(option7Drop2);
 
+    let nutritionDropDown = document.creatElement('select');
+    nutritionDropDown.id = 'dropDownNutrition';
+    nutritionDiv.appendChild(nutritionDropDown);
       // input bar for covering
       let inputBar2 = document.createElement('input');
     inputBar2.id = 'secondInputBar';
