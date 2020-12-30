@@ -201,11 +201,29 @@ document.addEventListener('DOMContentLoaded',()  => {
     option7Drop2.innerHTML = 'Slice';
     dropDown2.appendChild(option7Drop2);
 
-    let nutritionDropDown = document.creatElement('select');
+    let nutritionDropDown = document.createElement('select');
     nutritionDropDown.id = 'dropDownNutrition';
     nutritionDiv.appendChild(nutritionDropDown);
+
+    let nutOptDrop2 = document.createElement('option');
+    nutOptDrop2.id = 'opt2Nut';
+    nutOptDrop2.innerHTML = 'Fiber';
+    nutritionDropDown.appendChild(nutOptDrop2);
+
+    let nutOptDrop1 = document.createElement('option');
+    nutOptDrop1.id = 'opt1Nut';
+    nutOptDrop1.innerHTML = 'Protein';
+    nutritionDropDown.appendChild(nutOptDrop1);
+
+    let nutOptDrop1 = document.createElement('option');
+    nutOptDrop1.id = 'opt1Nut';
+    nutOptDrop1.innerHTML = 'Protein';
+    nutritionDropDown.appendChild(nutOptDrop1);
+
       // input bar for covering
-      let inputBar2 = document.createElement('input');
+
+
+    let inputBar2 = document.createElement('input');
     inputBar2.id = 'secondInputBar';
     inputBar2.style.bColor = 'blue'
     inputBar2.placeholder = 'Enter Carb Amount ';
