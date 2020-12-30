@@ -205,20 +205,20 @@ document.addEventListener('DOMContentLoaded',()  => {
     nutritionDropDown.id = 'dropDownNutrition';
     nutritionDiv.appendChild(nutritionDropDown);
 
+    let nutOptDrop1 = document.createElement('option');
+    nutOptDrop1.id = 'opt1Nut';
+    nutOptDrop1.innerHTML = 'Fiber';
+    nutritionDropDown.appendChild(nutOptDrop1);
+
     let nutOptDrop2 = document.createElement('option');
     nutOptDrop2.id = 'opt2Nut';
-    nutOptDrop2.innerHTML = 'Fiber';
+    nutOptDrop2.innerHTML = 'Trans Fat';
     nutritionDropDown.appendChild(nutOptDrop2);
 
-    let nutOptDrop1 = document.createElement('option');
-    nutOptDrop1.id = 'opt1Nut';
-    nutOptDrop1.innerHTML = 'Protein';
-    nutritionDropDown.appendChild(nutOptDrop1);
-
-    let nutOptDrop1 = document.createElement('option');
-    nutOptDrop1.id = 'opt1Nut';
-    nutOptDrop1.innerHTML = 'Protein';
-    nutritionDropDown.appendChild(nutOptDrop1);
+    let nutOptDrop3 = document.createElement('option');
+    nutOptDrop3.id = 'opt3Nut';
+    nutOptDrop3.innerHTML = 'Protein';
+    nutritionDropDown.appendChild(nutOptDrop3);
 
       // input bar for covering
 
