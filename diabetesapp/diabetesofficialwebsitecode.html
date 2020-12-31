@@ -205,6 +205,11 @@ document.addEventListener('DOMContentLoaded',()  => {
     nutritionDropDown.id = 'dropDownNutrition';
     nutritionDiv.appendChild(nutritionDropDown);
 
+    let nutOptDrop0 = document.createElement('option');
+    nutOptDrop0.id = 'opt0Nut';
+    nutOptDrop0.innerHTML = 'Carbs';
+    nutritionDropDown.appendChild(nutOptDrop0);
+
     let nutOptDrop1 = document.createElement('option');
     nutOptDrop1.id = 'opt1Nut';
     nutOptDrop1.innerHTML = 'Fiber';
@@ -230,6 +235,15 @@ document.addEventListener('DOMContentLoaded',()  => {
     nutOptDrop5.innerHTML = 'Trans Fat';
     nutritionDropDown.appendChild(nutOptDrop5);
 
+    let nutOptDrop6 = document.createElement('option');
+    nutOptDrop6.id = 'opt6Nut';
+    nutOptDrop6.innerHTML = 'Sodium';
+    nutritionDropDown.appendChild(nutOptDrop6);
+
+    let nutOptDrop7 = document.createElement('option');
+    nutOptDrop7.id = 'opt7Nut';
+    nutOptDrop7.innerHTML = 'Cholesterol';
+    nutritionDropDown.appendChild(nutOptDrop7);
 
 
 
