@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded',()  => {
 
     let nutritionalDivInput = document.createElement('div');
     nutritionalDivInput.id = 'nutritionalInputDiv' ;
-    document1.body.appendChild(nutritionalDivInput);
+    document.body.appendChild(nutritionalDivInput);
 
-    
+
 
     let h2Tag = document.createElement('h2');
     h2Tag.id = 'secondH2';
@@ -297,6 +297,30 @@ document.addEventListener('DOMContentLoaded',()  => {
     carbListAmount.id = 'amountOfCarbs';
     carbListAmount.placeholder = 'Enter Carb Amount';
     div9.appendChild(carbListAmount);
+
+
+    let nutProteinInput = document.createElement('input');
+    nutProteinInput.id = 'proteinInput';
+    nutProteinInput.placeholder = ' Amout of Protein ';
+    nutritionalDivInput.appendChild(nutProteinInput);    
+
+    let nutCarbsInput = document.createElement('input');
+    nutCarbsInput.id = 'nutCarbsInput';
+    nutCarbsInput.placeholder = ' Amout of Carbs';
+    nutritionalDivInput.appendChild(nutCarbsInput);    
+
+    let nutTransFatInput = document.createElement('input');
+    nutTransFatInput.id = 'tranFatInput';
+    nutTransFatInput.placeholder = ' Amout of Trans Fat ';
+    nutritionalDivInput.appendChild(nutTransFatInput);    
+
+    let nutFatInput = document.createElement('input');
+    nutFatInput.id = 'fatInput';
+    nutFatInput.placeholder = ' Amout of Fat ';
+    nutritionalDivInput.appendChild(nutFatInput);    
+
+
+
 
     let coverCorrectList = document.createElement('ul');
     coverCorrectList.id = 'ul2';
