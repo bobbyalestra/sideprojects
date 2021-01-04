@@ -564,7 +564,7 @@ const totalsNew = [];
             console.log(carbsArray, "Carbs Array")
             console.log()
 
-            let finaltotal = document.getElementById('totalLog');
+        let finaltotal = document.getElementById('totalLog');
         let displayFoodLog =  "<li>" +  " "+ totalCarbs + " " + "total Amount of carbs"  + '</li>';
         document.getElementById('totalLogsList').innerHTML += displayFoodLog;
           }
@@ -575,6 +575,22 @@ const totalsNew = [];
                 let FoodinputTotalCarbs = document.getElementById('amountOfCarbs');
 
 }); 
+
+
+    let nutrientButton = document.createElement('button');
+    nutrientButton.id = 'nutButt';
+    nutrientButton.style.color = 'teal';
+    nutrientButton.innerText = 'Submit Nutrients';
+    nutritionDiv.appendChild(nutrientButton);
+
+    nutrientButton.addEventListener('click', () => {
+
+        
+
+    });
+
+
+
 
 });
 // new code code
