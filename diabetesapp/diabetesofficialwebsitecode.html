@@ -4,15 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <Style>
-
-        secondP1Tag {
-                background-color: blue;
+    <style>
 
             
     
-        }
-        </Style>
+#firstButton {
+display:inline-block;
+padding:0.7em 1.4em;
+margin:0 0.3em 0.3em 0;
+border-radius:0.15em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:#FFFFFF;
+background-color:#3369ff;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+
+}
+
+#firstButton:active{
+    top : 0.1em;
+} 
+
+@media all and (max-width:30em){
+    #firstButton{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+
+
+#secondButton {
+display:inline-block;
+padding:0.7em 1.4em;
+margin:0 0.3em 0.3em 0;
+border-radius:0.15em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:#FFFFFF;
+background-color:#3369ff;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+
+}
+
+#secondButton:active{
+    top : 0.1em;
+} 
+
+@media all and (max-width:30em){
+    #secondButton{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+
+
+
+#thirdButton {
+display:inline-block;
+padding:0.7em 1.4em;
+margin:0 0.3em 0.3em 0;
+border-radius:0.15em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:#FFFFFF;
+background-color:#3369ff;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+
+}
+
+#thirdButton:active{
+    top : 0.1em;
+} 
+
+@media all and (max-width:30em){
+    #thirdButton{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+
+
+
+#fourthButton {
+display:inline-block;
+padding:0.7em 1.4em;
+margin:0 0.3em 0.3em 0;
+border-radius:0.15em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:#FFFFFF;
+background-color:#3369ff;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+
+}
+
+#fourthButton:active{
+    top : 0.1em;
+} 
+
+@media all and (max-width:30em){
+    #fourthButton{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+
+#fifthButton {
+display:inline-block;
+padding:0.7em 1.4em;
+margin:0 0.3em 0.3em 0;
+border-radius:0.15em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:#FFFFFF;
+background-color:#3369ff;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+
+}
+
+#fifthButton:active{
+    top : 0.1em;
+} 
+
+@media all and (max-width:30em){
+    #FifthButton{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+
+
+
+        </style>
 </head>
 
 <body>
@@ -596,15 +749,15 @@ const totalsNew = [];
     nutrientButton.addEventListener('click', () => {
 
         let proteinInputLI = document.getElementById('proteinInput').value;
-        let nutTransFatInputLI = document.getElementById('nutCarbsInput').value;
-        let transFatInputLI = document.createElement('tranFatInput').value;
+        let nutCarbsLI = document.getElementById('nutCarbsInput').value;
+        let transFatInputLI = document.getElementById('tranFatInput').value;
         let fatInputLI = document.getElementById('fatInput').value;
 
-        let addToNutlist = document.getElementById('nutButtLI');
-        let displayNutLog =  '<li>' + " Amount of " +  proteinInputLI  +  " grams of protein " + '</li>';
-        document.getElementById('nutButtLI').innerHTML += displayNutLog
+        let addToNutlist = document.getElementById('nutInputLog');
+        let displayNutLog =  '<li>' + " Amount of " +  proteinInputLI  +  " grams of protein " + ", " + nutCarbsLI  +  " grams of Carbs Fats " +  ' , ' + transFatInputLI  +  " grams of Trans Fats " + " , " + fatInputLI  +  " grams of Fats " + '</li>';
+        document.getElementById('nutButtLI').innerHTML += displayNutLog;
 
-
+        console.log(fatInputLI)
     });
 
 
