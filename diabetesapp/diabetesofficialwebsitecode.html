@@ -360,6 +360,16 @@ document.addEventListener('DOMContentLoaded',()  => {
     totalLogLi.id = 'totalLogsList';
     totalLogUl.appendChild(totalLogLi);
 
+    let nutrientInputButtUL = document.createElement('ul');
+    nutrientInputButtUL.id = ' nutInputLog';
+    nutrientInputButtUL.style.color = 'orange';
+    nutritionalDivInput.appendChild(nutrientInputButtUL);
+
+    let nutrientInputButtLI = document.createElement('li');
+    nutrientInputButtLI.id = 'nutButtLI';
+    nutrientInputButtLI.style.color = ' orange';
+    nutrientInputButtUL.appendChild(nutrientInputButtLI);
+
     // submit button for carb cover //
     let button1 = document.createElement('button');
     button1.id = "firstButton";
@@ -585,7 +595,7 @@ const totalsNew = [];
 
     nutrientButton.addEventListener('click', () => {
 
-        
+
 
     });
 
