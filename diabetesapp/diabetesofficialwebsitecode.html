@@ -595,6 +595,14 @@ const totalsNew = [];
 
     nutrientButton.addEventListener('click', () => {
 
+        let proteinInputLI = document.getElementById('proteinInput').value;
+        let nutTransFatInputLI = document.getElementById('nutCarbsInput').value;
+        let transFatInputLI = document.createElement('tranFatInput').value;
+        let fatInputLI = document.getElementById('fatInput').value;
+
+        let addToNutlist = document.getElementById('nutButtLI');
+        let displayNutLog =  '<li>' + " Amount of " +  proteinInputLI  +  " grams of protein " + '</li>';
+        document.getElementById('nutButtLI').innerHTML += displayNutLog
 
 
     });
