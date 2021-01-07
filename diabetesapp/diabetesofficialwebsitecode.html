@@ -160,8 +160,6 @@ position:relative;
         margin:0.4em auto;
     }
 }
-
-
 #sixthButton {
 display:inline-block;
 padding:0.7em 1.4em;
@@ -216,6 +214,65 @@ position:relative;
 
 @media all and (max-width:30em){
     #seventhButton{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+#eighthButton {
+display:inline-block;
+padding:0.7em 1.4em;
+margin:0 0.3em 0.3em 0;
+border-radius:50px 50px 50px 50px;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:red;
+background-color:black;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+
+}
+
+#eighthButton:active{
+    top : 0.1em;
+} 
+
+@media all and (max-width:30em){
+    #eighthButton{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+
+#ninethbutton {
+display:inline-block;
+padding:0.7em 1.4em;
+margin:0 0.3em 0.3em 0;
+border-radius:50px 50px 50px 50px;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:red;
+background-color:black;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+
+}
+
+#ninethbutton:active{
+    top : 0.1em;
+} 
+
+@media all and (max-width:30em){
+    #ninethbutton{
         display:block;
         margin:0.4em auto;
     }
@@ -372,7 +429,18 @@ box-shadow: inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
 position:relative;
 }
 
-
+#secondDropDown {
+    padding:0.7em;
+margin:0 0.3em 0.3em 0;
+border-radius: 0.15em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+color:red;
+background-color:grey;
+box-shadow: inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+position:relative;
+}
 
         </style>
 </head>
@@ -891,8 +959,6 @@ const totalsNew = [];
 
     let button8 = document.createElement('button');
     button8.id = 'eighthButton';
- 
-    button8.style.color = 'green';
     button8.innerText = 'ADD FOOD'
     document.getElementById('eighthDiv').appendChild(button8);
     button8.addEventListener('click', ()=> {
@@ -912,7 +978,6 @@ const totalsNew = [];
 
         let button9 = document.createElement('button');
         button9.id = 'ninethbutton';
-        button9.style.color = 'green';
         button9.innerText = 'Find Total'
         div8.appendChild(button9);
         button9.addEventListener('click',  (input) => {
