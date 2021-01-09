@@ -277,6 +277,39 @@ position:relative;
         margin:0.4em auto;
     }
 }
+
+
+#nutButt{
+display:inline-block;
+padding:0.7em 1.4em;
+margin:0 0.3em 0.3em 0;
+border-radius:50px 50px 50px 50px;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+text-transform:uppercase;
+font-weight:400;
+color:red;
+background-color:black;
+box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+text-align:center;
+position:relative;
+
+}
+
+#nutButt:active{
+    top : 0.1em;
+} 
+
+@media all and (max-width:30em){
+    #nutButt{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+
+
 /* inputbar style */
 #secondInputBar {
 padding:0.7em;
@@ -837,6 +870,8 @@ document.addEventListener('DOMContentLoaded',()  => {
     nutFatInput.placeholder = ' Amout of Fat ';
     nutritionalDivInput.appendChild(nutFatInput);    
 
+
+    //new inout
 
 
 
