@@ -1,18 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          New Site
-        </p>
-    
-      </header>
-    </div>
+
+
+  function App() {
+    return (
+      <>
+        <Navbar />
+        <div className="container mt-2" style={{ marginTop: 40 }}>
+          <Home />
+          <About />
+        </div>
+      </>
+   
   );
-}
 
+    }
 export default App;
