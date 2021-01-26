@@ -1,18 +1,25 @@
 "use strict";
 
-var mongoose = require('mongoose');
+var router = require('express').Router();
 
-var Schema = mongoose.Schema;
-var userSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    minlength: 3
-  }
-}, {
-  timestamps: true
+var User = require('../models/user.model');
+
+router.route('/').get(function (req, res) {
+  User.find().then(function (users) {
+    return res.json(users);
+  })["catch"](function (err) {
+    return res.status(400).json('Error: ' + err);
+  });
 });
-var User = mongoose.model('User', userSchema);
-module.exports = User;
+router.route('/add').post(function (req, res) {
+  var username = req.body.username;
+  var newUser = new User({
+    username: username
+  });
+  newUser.save().then(function () {
+    return res.json('User added!');
+  })["catch"](function (err) {
+    return res.status(400).json('Error: ' + err);
+  });
+});
+module.exports = router;
