@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+m
 const Exercise = props => (
   <tr>
     <td>{props.exercise.username}</td>

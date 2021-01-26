@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker/dist/react-datepicker.css";
 
 export default class CreateExercise extends Component {
   constructor(props) {
     super(props);
 
+    module.exports = {
+        entry: './app.js',
+        output: {
+          filename: 'bundle.js'
+        },
+        externals: ['axios'],
+        resolve: {
+          alias: {
+            'js-data-angular': '../dist/js-data-angular.js'
+          }
+        }
+      };
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
