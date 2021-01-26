@@ -1,20 +1,28 @@
-const router = require('express').Router();
-let User = require('../models/user.model');
 
-router.route('/').get((req, res) => {
-  User.find()
-    .then(users => res.json(users))
-    .catch(err => res.status(400).json('Error: ' + err));
+
+
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+
+const exerciseSchema = new Schema({
+  username: { type: String, required: true },
+  description: { type: String, required: true },
+  duration: { type: Number, required: true },
+  date: { type: Date, required: true },
+}, {
+  timestamps: true,
 });
 
-router.route('/add').post((req, res) => {
-  const username = req.body.username;
+const Exercise = mongoose.model('Exercise', exerciseSchema);
 
-  const newUser = new User({username});
+module.exports = Exercise;
 
-  newUser.save()
-    .then(() => res.json('User added!'))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
 
-module.exports = router;
+
+
+
+
+////// route  code  
+
+

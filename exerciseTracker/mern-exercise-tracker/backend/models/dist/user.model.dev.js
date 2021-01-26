@@ -1,25 +1,27 @@
 "use strict";
 
-var router = require('express').Router();
+var mongoose = require('mongoose');
 
-var User = require('../models/user.model');
-
-router.route('/').get(function (req, res) {
-  User.find().then(function (users) {
-    return res.json(users);
-  })["catch"](function (err) {
-    return res.status(400).json('Error: ' + err);
-  });
+var Schema = mongoose.Schema;
+var exerciseSchema = new Schema({
+  username: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  duration: {
+    type: Number,
+    required: true
+  },
+  date: {
+    type: Date,
+    required: true
+  }
+}, {
+  timestamps: true
 });
-router.route('/add').post(function (req, res) {
-  var username = req.body.username;
-  var newUser = new User({
-    username: username
-  });
-  newUser.save().then(function () {
-    return res.json('User added!');
-  })["catch"](function (err) {
-    return res.status(400).json('Error: ' + err);
-  });
-});
-module.exports = router;
+var Exercise = mongoose.model('Exercise', exerciseSchema);
+module.exports = Exercise; ////// route  code
