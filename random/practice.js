@@ -1,6 +1,7 @@
 
 
 let string = "This is a string";
+let strLowerCase = string.toLowerCase()
 
 for (let i = 0; i < string.length; i++) {
 
