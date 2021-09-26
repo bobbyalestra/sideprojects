@@ -83,6 +83,28 @@ function cr4eatePlayersUI()
     }
 }
 
+function startBlackJack()
+    {
+        document.getElementById('btnStart').value = "Restart";
+        document.getElementById("status").style.display = "none";
+        //deal 2 cards to every player
+
+        currentPlayer = 0;
+        createDeck();
+        shuffle();
+        createPlayers();
+        dealHands();
+        document.getElementById('player_' + currentPlayer).classList.add('active');
+
+    }
+
+function dealHands()
+{
+    //alternate between players cards
+    //2 cards each to start
+    for ( let i = 0; i < players.length; i++)
+}
+
 //  function select() {
 //     selectedCards.push(randomCard)
 //     console.log(selectedCards)
