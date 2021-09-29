@@ -45,8 +45,8 @@ let randomSuit = suits[(Math.random() * suits.length) | 0]
  }
 
 
-const players = new Array();
-function createPlayer(num)
+let players = new Array();
+function createPlayers(num)
 {
     players = new Array();
     for (let i = 1; i <= num; i++)
@@ -59,7 +59,7 @@ function createPlayer(num)
 
 
 
-function cr4eatePlayersUI()
+function createPlayersUI()
 {
     document.getElementById('players').innerHTML = ''
     for (let i = 0; i < players.length; i++) 
@@ -83,7 +83,7 @@ function cr4eatePlayersUI()
     }
 }
 
-function startBlackJack()
+function startblackjack()
     {
         document.getElementById('btnStart').value = "Restart";
         document.getElementById("status").style.display = "none";
@@ -92,7 +92,7 @@ function startBlackJack()
         currentPlayer = 0;
         createDeck();
         shuffle();
-        createPlayers();
+        createPlayers(2);
         dealHands();
         document.getElementById('player_' + currentPlayer).classList.add('active');
 
@@ -102,7 +102,86 @@ function dealHands()
 {
     //alternate between players cards
     //2 cards each to start
-    for ( let i = 0; i < players.length; i++)
+    for (let i = 0; i < 2; i++)
+    {
+    for ( let j = 0; j < players.length; j++)
+    {
+        let card = deck.pop();
+        players[j].Hand.push(card);
+        renderCarder(card, j)
+        updatePoints();
+    }
+}
+
+
+}
+
+
+function renderCard(card, player)
+{
+    let hand =  document.getElementById('hand_' + player);
+    hand.appendChild(getCardUI(card));
+}
+
+function getCardUI() 
+{
+    let el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = card.Suit + ' ' + card.Value;
+    return el;
+}
+
+
+let currentPlayer = 0;
+function hitMe()
+{
+    // pop a card from the deck to the current player
+    //check to see if current player has 21 or over 21
+    let card = deck.pop();
+    players[currentPlayer].Hand.push(card);
+    renderCard();
+    updatePoints();
+    check();
+}
+
+function check()
+{
+    if (players[currentPlayer].Points > 21)
+    {
+        document.getElementById('status').innerHTML = "Player: " + player[currentPlayer].ID + ' LOST'
+    }
+}
+
+function stay()
+{
+    //move to next player
+    if (currentPlayer != players.length-1) {
+        document.getElementById('playwer_' + currentPlayer).classList.remove('active');
+        document.getElementById('player_' + currentPlayer).classList.add('active');
+    }
+
+    else {
+        end();
+    }
+}
+
+function end()
+{
+    let winner = -1
+    let score = 0
+
+    for (let i = 0; i < players.length; i++)
+    {
+        if (players[i].Points > score && players[i].Points < 22)
+            {
+                winner = i;
+            }
+            
+            score = players[i].Points;
+            
+    }
+
+    document.getElementById('status').innerHTML = " Winner: Player " + players[winner].ID;
 }
 
 //  function select() {
