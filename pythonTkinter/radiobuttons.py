@@ -10,7 +10,7 @@ root.title("Radio Button")
 #r.set("2")
 
 
-MODES = [
+TOPPINGS = [
     ("Pepperoni", "Pepperoni"),
     ("Cheese", "Cheese"),
     ("Mushroom", "Mushroom"),
@@ -30,11 +30,11 @@ def clicked(value):
 pizza = StringVar()
 pizza.set("Pepperoni")
 
-for text, mode in MODES:
-    Radiobutton(root, text=text, variable=pizza, value=mode).pack()
+for text, topping in TOPPINGS:
+    Radiobutton(root, text=text, variable=pizza, value=topping).pack(anchor=W)
 
-myLabel = Label(root, text=pizza.get())
-myLabel.pack()
+#myLabel = Label(root, text=pizza.get())
+#myLabel.pack()
 
 myButton =Button(root, text="click me",command= lambda: clicked(pizza.get()))
 myButton.pack()
