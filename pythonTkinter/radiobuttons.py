@@ -6,8 +6,8 @@ from tkinter import *
 root= Tk()
 root.title("Radio Button")
 
-r = IntVar()
-r.set("2")
+#r = IntVar()
+#r.set("2")
 
 
 MODES = [
@@ -27,11 +27,16 @@ def clicked(value):
 #RadioButton(root, text=" Option 3", variable=r, value=3).pack()
 #RadioButton(root, text=" Option 4", variable=r, value=4).pack()
 
+pizza = StringVar()
+pizza.set("Pepperoni")
 
-myLabel = Label(root, text=r.get())
+for text, mode in MODES:
+    Radiobutton(root, text=text, variable=pizza, value=mode).pack()
+
+myLabel = Label(root, text=pizza.get())
 myLabel.pack()
 
-myButton =Button(root, text="click me",command= lambda: clicked(r.get()))
+myButton =Button(root, text="click me",command= lambda: clicked(pizza.get()))
 myButton.pack()
 
 mainloop()
