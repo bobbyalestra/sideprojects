@@ -1,7 +1,7 @@
 import React from "react";
 
-const Display = ({ gameOverm text }) => (
-    <div>{Text}</div>
+const Display = ({ gameOver, text }) => (
+    <div>{text}</div>
 
 )
 
